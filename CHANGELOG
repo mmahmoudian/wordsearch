@@ -1,0 +1,62 @@
+1.4.1
+FEATURES:
+- Added --no_normalize to aid in making number searches
+- Included a small Perl Program "numbergenerator.pl" to aid in making number
+  searches
+
+BUGFIXES:
+- Documented several switches that weren't documented (whoops!)
+- Made --all really use all of the words
+- Minor bug fixes
+
+1.4
+Thanks to Lars Huttar for the bulk of these changes
+- Fixed bug such that no words entered the first row or column
+- Added --fillwithquote feature
+- Now works with other alphabets (thanks to Unicode)
+- Now random filling consists of the letters in the hidden words (in same frequency)
+- Made a function normalize() that removes diacritics (as well as
+   case distinctions, punctuation, and spaces) by converting to a canonical form.
+- Added --lowercase option: Use lowercase (uppercase by default)
+- Modified word placement algorithm to try to intersect existing words if possible.
+- When $fillwithquote is true, retry several times to get the
+  remaining number of blanks equal to the length of the quote.
+- Check to make sure there are not multiple solutions for a given word,
+  especially when $fillwithquote is true, because this can mess up the quote.
+  This is controlled by the --checkunique option.
+- In order to make words in solution discernable, even in dense wordsearches,
+  output solution as SVG with lines highlighting words.
+
+
+1.3.4
+FEATURES:
+- Added minwordlength switch to configure the shortest word used from the list
+- Added similarwords switch to allow similar words (default is now no similar words)
+- Added useletters switch to use the letters in the puzzle as the pool of random letters to populate the puzzle.
+
+BUGFIXES:
+- Minor bug fixes.
+
+1.3.3
+BUGFIXES:
+* Modified the wordsearch program to shuffle the wordlist and then pick the
+  words from the shuffled list. This will prevent duplicate entries from
+  the word list (as long as the word list does not contain duplicates itself)
+  This simplifies the code, so custom word lists may load and display faster
+  than before.
+
+1.3.2 
+BUGFIXES:
+(R. Labaza reported the following. Thanks!)
+* Using wordlists could cause infinite looping.
+* Blank lines caused infinite looping.
+* Words sometimes missing last letter.
+* Minor bugfixing and optimizations.
+
+FEATURES:
+* New: Puzzle will grow until a solution is found. Use nogrow to turn off this feature.
+* Added quick and thorough settings to change how quickly the program will
+  attempt before trying to grow the puzzle, or abort.
+
+1.3:
+* Fixes to reduce infinite looping conditions. A -version tag is added to the output version number.
