@@ -1,4 +1,4 @@
 wordsearch
 ==========
 
-Word Search creation in Perl
+This application creates word search puzzles for your enjoyment (frustration?)
